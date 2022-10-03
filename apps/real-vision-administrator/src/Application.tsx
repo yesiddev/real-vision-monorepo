@@ -1,5 +1,12 @@
 import { useState } from 'react'
 import {Admin} from '@rv/types/dist/models/index'
+import Header from './components/Layout/Header'
+import Breadcrumbs from './components/shared/Breadcrumbs'
+import Board from './screens/Enterprise/Kanban/Board'
+import Kanban from './screens/Enterprise/Kanban'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Boards from './screens/Main/Boards'
+import CreatePostSoftware from './screens/Software/Blog/CreatePostSoftware'
 
 const Application = () => {
   const [count, setCount] = useState(0)
@@ -12,9 +19,14 @@ const Application = () => {
     age: 25})
 
   return (
-    <div className="App">
-      <h1>Real Vision Administrator {user.name}</h1>      
-    </div>
+    <BrowserRouter>
+        <Header />
+    <Routes>
+    <Route  path='/' element={<Boards />} />
+      <Route  path='/kanban' element={<Kanban />} />
+      <Route  path='/create-post-software' element={<CreatePostSoftware />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

@@ -1,0 +1,100 @@
+.header{
+    height: 5.5rem;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, .05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+.header .logo{
+    width: 30px;
+}
+
+.header nav{
+    display: flex;
+    gap: 2rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: #344563;
+    transition: opacity 0.3s ease 0s;
+    white-space: nowrap;
+}
+
+.left_items{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.user h3{
+    font-weight: 600;
+    color: #344563;
+    font-size: 1.4rem;
+}
+
+.user p{
+    color: #344563;
+    font-size: 1.2rem;
+}
+
+.user_profile{
+    background-color: #1971ea;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 5rem;
+    font-size: 2.2rem;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 300;
+}
+
+.user > span{
+    display: block;
+}
+
+.dropdown_menu{
+    display: none;
+}
+
+.nav span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: .5s;
+}
+
+.nav span:hover .dropdown_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: .5rem;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 160px;
+    background-color: #fff;
+    color: var(--legacy-blue);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+
+}
+
+.nav span .dropdown_menu a{
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.nav span .dropdown_menu a:hover{
+    background-color: rgba(0, 0, 0, .05);
+}

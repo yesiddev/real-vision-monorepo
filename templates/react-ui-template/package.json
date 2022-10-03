@@ -9,22 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@rv/types": "~1.0.0",
-    "chart.js": "^3.9.1",
     "path": "^0.12.7",
-    "quill": "^1.3.7",
     "react": "^18.2.0",
-    "react-beautiful-dnd": "^13.1.1",
-    "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
-    "react-quill": "^2.0.0",
-    "react-router-dom": "^6.4.1"
+    "@rv/types": "~1.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
-    "@types/quill": "^2.0.9",
     "@types/react": "^18.0.17",
-    "@types/react-beautiful-dnd": "^13.1.2",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
     "typescript": "^4.6.4",

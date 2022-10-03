@@ -1,0 +1,22 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    margin: 0 .5rem;
+    min-height: 60rem;
+    min-width: 22%;
+    border-radius: .5rem;
+    background-color: #fff;
+}
+
+.list h2{
+    padding: 1.3rem 1rem 1.7rem;
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.issues{
+    height: 100%;
+    padding: 0 .5rem;
+}

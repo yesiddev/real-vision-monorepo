@@ -1,0 +1,15 @@
+.input{
+    position: relative;
+    display: inline-block;
+    height: 3.2rem;
+    width: 100%;
+}
+
+.input_element{
+    height: 100%;
+    width: 100%;
+    padding: 0 .7rem;
+    border-radius: .5rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+
+}
