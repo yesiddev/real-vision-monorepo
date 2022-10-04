@@ -64,6 +64,7 @@
 
 .dropdown_menu{
     display: none;
+    z-index: 1;
 }
 
 .nav span{
@@ -76,7 +77,6 @@
 .nav span:hover .dropdown_menu {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     padding: .5rem;
     position: absolute;
     left: 0;
@@ -91,7 +91,7 @@
 }
 
 .nav span .dropdown_menu a{
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: .5rem;
 }
 

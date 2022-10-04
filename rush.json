@@ -330,8 +330,18 @@
       "reviewCategory": "apps"
     },
     {
+      "packageName": "status-ui",
+      "projectFolder": "apps/status-ui",
+      "reviewCategory": "apps"
+    },
+    {
       "packageName": "@rv/types",
       "projectFolder": "packages/types",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@rv/utilities",
+      "projectFolder": "packages/utilities",
       "reviewCategory": "packages"
     }
     // {

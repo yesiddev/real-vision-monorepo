@@ -1,15 +1,46 @@
+import Button from '@/components/shared/Button';
 import React from 'react'
 import { Draggable } from 'react-beautiful-dnd'
+import { Link, useLocation } from 'react-router-dom';
+import styles from './Issue.module.css';
 
-const Issue = () => {
-    const index = 0;
-  const issue = {
-    id: 'issueid',
-  }
+interface Props {
+  issueId: string;
+  title: string;
+  priority: string;
+  code: number;
+  index: number;
+}
+
+const Issue = ({issueId, priority, title, code, index}: Props) => {
+
+  const {pathname} = useLocation();
+
   return (
-    <Draggable draggableId={issue.id.toString()} index={index}>
+    <Draggable draggableId={issueId.toString()} index={index}>
        {(provided, snapshot) => (
-        <button>{issue.id}</button>
+        <Link 
+        to={`/kanban/issues/${issueId}`} 
+        ref={provided.innerRef}
+        {...provided.draggableProps}
+        {...provided.dragHandleProps}
+        className={styles.issue_link}>
+          <div className={`${styles.issue} ${snapshot.isDragging && !snapshot.isDropAnimating && styles.isDrag}`}>
+            <p className={`${styles.issue_header} ${styles[`${priority}`]} `}>
+              <span>#{code}</span>
+              <span>2 months ago</span>
+            </p>
+            <p className={styles.title}>
+              {title}
+            </p>
+
+            <div className={styles.bottom}>
+              <div>
+
+              </div>
+            </div>
+          </div>
+        </Link>
         // <IssueLink
         //   to={`${match.url}/issues/${issue.id}`}
         //   ref={provided.innerRef}

@@ -7,17 +7,27 @@ import { useLayoutEffect } from 'react';
 import ReactQuill from 'react-quill';
 
 interface Props {
-    className: string;
+    className?: string;
+    value?: string;
+    setValue?: Function | any
 }
 
-const TextEditor = ({className}: Props) => {
-    const [value, setValue] = useState('');
+const TOOLBAR_OPTIONS = [
+    [{header: [1,2,3,4,5,6,false]}],
+    [{font: []}],
+    [{list: "ordered"}, {list: "bullet"}],
+    ["bold", "italic", "underline"],
+    [{color: []}, {background: []}],
+    [{script: "sub"}, {script: "super"}],
+    [{align: []}],
+    ["image", "blockquote", "code-block"],
+    ["clean"],
+]
+
+const TextEditor = ({className, value, setValue}: Props) => {
     return (
         <div className={className == 'page'? 'container_page' : styles.container}>
-            <ReactQuill value={value} onChange={setValue} />
-
-            {/* <div dangerouslySetInnerHTML={{__html: value}}>
-            </div> */}
+            <ReactQuill value={value} onChange={setValue} modules={{toolbar: TOOLBAR_OPTIONS}} />
         </div>
     )
 }

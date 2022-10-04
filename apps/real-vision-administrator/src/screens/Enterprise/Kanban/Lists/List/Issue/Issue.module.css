@@ -1,0 +1,53 @@
+.issue_link{
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.issue{
+    /* padding: 1rem; */
+    border-radius: .5rem;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0px rgba(9, 30, 66, 0.25);
+    transition: background .1s;
+
+}
+
+.issue:hover{
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.isDrag{
+    transform: rotate(3deg);
+}
+
+.issue_header{
+    background-color: var(--primary-color);
+    padding: 1rem ;
+    border-radius: .5rem .5rem 0 0;
+    color: #fff;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Moderate{
+    background-color: #FFA500;
+}
+
+.Express{
+    background-color: #F32013;
+}
+
+.title{
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

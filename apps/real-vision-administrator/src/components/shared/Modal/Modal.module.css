@@ -26,8 +26,10 @@
 }
 
 .center{
-    max-width: 750px;
+    max-width: 850px;
     vertical-align: middle;
     border-radius: .5rem;
     overflow: hidden;
+    min-height: 100%;
+    height: auto;
 }

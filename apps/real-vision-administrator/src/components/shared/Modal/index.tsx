@@ -8,14 +8,14 @@ import styles from "./Modal.module.css";
 
 
 interface Props {
-  className: string;
-  testid: string;
-  variant: string;
-  width: number;
-  withCloseIcon: boolean;
+  className?: string;
+  testid?: string;
+  variant?: string;
+  width?: number;
+  withCloseIcon?: boolean;
   isOpen: boolean;
   setIsOpen: Function,
-  onClose: Function;
+  onClose?: Function;
   renderLink?: Function;
   renderContent: Function;
 }
@@ -51,7 +51,6 @@ const Modal = ({
   const closeModal = useCallback(() => {
     setIsOpen(false)
   }, [])
-
 
   useOnEscapeKeyDown(isOpen, closeModal)
 

@@ -41,6 +41,10 @@
     height: 70vh !important;
 }
 
+.auto_page .ql-editor{
+    height: auto !important;
+}
+
 .primary{
     background-color: #1971ea;
     color: #fff;
