@@ -1,15 +1,15 @@
 .issue_link{
     display: block;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 .issue{
-    /* padding: 1rem; */
+    padding: 1rem;
     border-radius: .5rem;
     background-color: #fff;
     box-shadow: 0 1px 2px 0px rgba(9, 30, 66, 0.25);
     transition: background .1s;
-
+    min-height: 12rem;
 }
 
 .issue:hover{
@@ -21,26 +21,37 @@
 }
 
 .issue_header{
-    background-color: var(--primary-color);
-    padding: 1rem ;
+    /* background-color: var(--primary-color); */
     border-radius: .5rem .5rem 0 0;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #333;
+    font-weight: 400;
+    padding-bottom: 1rem;
 }
 
 .Moderate{
     background-color: #FFA500;
+    display: block;
+    height: 1rem;
+    width: 4rem;
+    border-radius: 1rem;
+    position: relative;
+
 }
 
 .Express{
-    background-color: #F32013;
+    background-color: #DC3545;
+    display: block;
+    height: 1rem;
+    width: 4rem;
+    border-radius: 1rem;
 }
 
 .title{
-    padding: 1rem;
     font-size: 1.5rem;
     color: #333;
     font-weight: 500;

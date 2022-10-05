@@ -1,0 +1,16 @@
+{
+  "name": "@rv/business-logic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@rv/types": "1.0.0",
+    "@rv/constant-definitions": "1.0.0"
+  }
+}

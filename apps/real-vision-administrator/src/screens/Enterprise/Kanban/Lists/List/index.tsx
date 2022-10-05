@@ -46,10 +46,6 @@ const List = ({status}: Props) => {
   }
   console.log(issues)
 
-    // const admin: Admin={
-
-    // }
-
   useEffect(() => {
     fetch();
   }, [])

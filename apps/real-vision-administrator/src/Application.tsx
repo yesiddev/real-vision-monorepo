@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Boards from './screens/Main/Boards'
 import CreatePostSoftware from './screens/Software/Blog/CreatePostSoftware'
 import { PublicRoutes } from './constants-definitions/Routes'
+import Private from './screens/Private'
 
 const Application = () => {
   const [count, setCount] = useState(0)
@@ -20,13 +21,13 @@ const Application = () => {
 
   return (
     <BrowserRouter>
-        <Header />
     <Routes>
       <Route  path={PublicRoutes.LOGIN} element={<Boards />} />
-      <Route  path='/kanban' element={<Kanban />} />
-      <Route  path='/kanban/issues/:issueId' element={<Kanban />} />
       <Route  path='/create-post-software' element={<CreatePostSoftware />} />
+      <Route path='/*' element={<Private />} />
       </Routes>
+
+      
     </BrowserRouter>
   )
 }

@@ -335,6 +335,21 @@
       "reviewCategory": "apps"
     },
     {
+      "packageName": "real-vision-api",
+      "projectFolder": "apps/real-vision-api",
+      "reviewCategory": "apps"
+    },
+    {
+      "packageName": "@rv/business-logic",
+      "projectFolder": "packages/business-logic",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@rv/constant-definitions",
+      "projectFolder": "packages/constant-definitions",
+      "reviewCategory": "packages"
+    },
+    {
       "packageName": "@rv/types",
       "projectFolder": "packages/types",
       "reviewCategory": "packages"

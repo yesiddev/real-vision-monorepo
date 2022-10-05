@@ -26,9 +26,10 @@ const Issue = ({issueId, priority, title, code, index}: Props) => {
         {...provided.dragHandleProps}
         className={styles.issue_link}>
           <div className={`${styles.issue} ${snapshot.isDragging && !snapshot.isDropAnimating && styles.isDrag}`}>
-            <p className={`${styles.issue_header} ${styles[`${priority}`]} `}>
+            <p className={styles.issue_header}>
+              <span className={styles[`${priority}`]}></span>
               <span>#{code}</span>
-              <span>2 months ago</span>
+              {/* <span>2 months ago</span> */}
             </p>
             <p className={styles.title}>
               {title}

@@ -5,6 +5,7 @@ export const PublicRoutes = {
 export const PrivateRoutes = {
     PRIVATE: '/private',
     KANBAN:  '/kanban',
+    PRODUCTS:  '/products',
     PROFILE: '/profile/:username',
     OTHER_PROFILE: '/user/:username',
 }
