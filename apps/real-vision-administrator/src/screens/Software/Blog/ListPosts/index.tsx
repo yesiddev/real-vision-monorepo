@@ -4,23 +4,23 @@ import Button from '@/components/shared/Button';
 import Field from '@/components/shared/Field';
 import HeaderScreen from '@/components/shared/Header';
 import Input from '@/components/shared/Input';
-import { getProducts } from '@/redux/states';
+import { getPosts, getProducts } from '@/redux/states';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Products.module.css'
 
-const Products = () => {
+const SoftwarePosts = () => {
 
     const [search, setSearch] = useState('');
 
-    const {loading, products = []} = useSelector((state: any) => state.products)
+    const {loading, posts = []} = useSelector((state: any) => state.softwarePosts)
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getProducts() as any);
+        dispatch(getPosts() as any);
     }, [])
+    console.log(posts)
 
-    console.log(loading);
     if(loading) return <Loader /> 
 
   return (
@@ -43,26 +43,24 @@ const Products = () => {
       <table className={styles.table}>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Brand</th>
+                <th>Title</th>
                 <th>Category</th>
-                <th>Price</th>
-                <th>Wattage</th>
+                <th>Views</th>
+                <th>Publisher</th>
                 <th>Created At</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            {products?.filter((product: any) => product.name.toLowerCase().includes(search.toLowerCase())).map((product:any) => (
-                <tr key={product.uuid}>
-                <td>{product.name}</td>
-                <td>{product.brand}</td>
+            {posts?.filter((product: any) => product.title.toLowerCase().includes(search.toLowerCase())).map((product:any) => (
+                <tr key={product._id}>
+                <td>{product.title}</td>
                 <td>{product.category}</td>
-                <td>${product.price}</td>
-                <td>{product.wattage}W</td>
-                <td>{product?.createdAt?.substring(0,10)}</td>
-                <td>{product?.status?.toString()}</td>
+                <td>{product.views}</td>
+                <td>{product.username}</td>
+                <td>{product.createdAt.substring(0,10)}</td>
+                <td>{product.status.toString()}</td>
                 <td><button><i className='bx bx-dots-vertical-rounded'></i></button></td>
             </tr>
             ))}
@@ -73,4 +71,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default SoftwarePosts

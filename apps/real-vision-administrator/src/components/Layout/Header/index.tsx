@@ -28,23 +28,23 @@ const Header = () => {
         <span>
           Hardware
           <div className={styles.dropdown_menu}>
-            <Link to="/">Blog</Link>
-            <Link to="/">Brands</Link>
-            <Link to="/">Categories</Link>
-            <Link to="/">Games</Link>
-            <Link to="/">Programs</Link>
-            <Link to="/">Products</Link>
-            <Link to="/">Computers</Link>
-            <Link to="/">Clients</Link>
-            <Link to="/">Quote</Link>
-            <Link to="/">Quotation</Link>
+            <Link to="/hardware-blog">Blog</Link>
+            <Link to="/brands">Brands</Link>
+            <Link to="/categories">Categories</Link>
+            <Link to="/games">Games</Link>
+            <Link to="/programs">Programs</Link>
+            <Link to="/products">Products</Link>
+            <Link to="/computers">Computers</Link>
+            <Link to="/clients">Clients</Link>
+            <Link to="/quote">Quote</Link>
+            <Link to="/quotation">Quotation</Link>
           </div>
         </span>
         <span>
         Software
           <div className={styles.dropdown_menu}>
             <Link to="/create-post-software">Create post</Link>
-            <Link to="/create-post-software">Status</Link>
+            <Link to="/status">Status</Link>
           </div>
         </span>
         <a>Marketing</a>

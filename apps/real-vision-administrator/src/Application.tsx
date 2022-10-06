@@ -9,6 +9,7 @@ import Boards from './screens/Main/Boards'
 import CreatePostSoftware from './screens/Software/Blog/CreatePostSoftware'
 import { PublicRoutes } from './constants-definitions/Routes'
 import Private from './screens/Private'
+import Loader from './components/Layout/Loader'
 
 const Application = () => {
   const [count, setCount] = useState(0)

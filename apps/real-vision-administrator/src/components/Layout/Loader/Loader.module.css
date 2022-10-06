@@ -1,0 +1,33 @@
+.loader_container{
+    height: 80vh;
+    display: grid;
+    place-items: center;
+}
+.loader_container > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loader{
+    height: 4rem;
+    width: 4rem;
+    border: 2px solid rgba(0, 0, 0, .5);
+    border-radius: 50rem;
+    border-left: 2px solid transparent;
+    animation: loader .3s linear infinite;
+    margin-bottom: 1rem;
+}
+
+.loader_container p{
+    font-weight: 300;
+    color: #333;
+}
+
+@keyframes loader {
+    0%{
+        rotate: 0deg;
+    }100%{
+        rotate: 360deg;
+    }
+}

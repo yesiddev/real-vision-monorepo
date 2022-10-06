@@ -12,9 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.listIssue = void 0;
 const types_1 = require("@rv/types");
 const dist_1 = require("@rv/constant-definitions/dist");
-const listIssue = () => __awaiter(void 0, void 0, void 0, function* () {
+const listIssue = (uuid) => __awaiter(void 0, void 0, void 0, function* () {
     const model = yield (0, dist_1.getModel)(dist_1.Collection.ISSUE, types_1.IssueSchemaMongo);
-    const issues = yield model.find({});
+    const issues = yield model.find({ uuid: uuid });
     return issues;
 });
 exports.listIssue = listIssue;
