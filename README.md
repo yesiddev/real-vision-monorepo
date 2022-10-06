@@ -1,4 +1,8 @@
-# real-vision-monorepo
+<p align="center">
+  <img src="https://www.realvisionenterprise.com/_next/image?url=%2Fimg%2Flogo192.png&w=128&q=75" alt="Real Vision Logo" />
+</p>
+
+## Real Vision Monorepo
 
 - Rush with PNPM to manage monorepo
 - CI/CD using Github Actions
