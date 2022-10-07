@@ -16,7 +16,7 @@
   npm install -g pnpm
   
   # 2. Install Rush
-  pnpm install @microsoft/rush
+  pnpm install -g @microsoft/rush
   
   # 3. Clone the repository
   git clone https://github.com/rvesoftware/real-vision-monorepo.git
