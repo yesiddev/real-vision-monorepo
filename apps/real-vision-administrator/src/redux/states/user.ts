@@ -1,15 +1,31 @@
 import { UserInfo } from "@/types/models/user/UserInfo";
 import { createSlice } from "@reduxjs/toolkit";
-import { clearLocalStorage, persistLocalStorage } from "@rv/utilities";
+// import { clearLocalStorage } from "@rv/utilities/dist/functions/localStorage";
 
 export const EmptyUserState: UserInfo = {
-    _id: "",
-    uuid: "",
+    uuid:'',
     name: '',
+    middlename: '',
+    lastname: '',
+    middlelastname: '',
     username: '',
-    token: '',
-    photo: "",
-    events: ""
+    identification: '',
+    email: '',
+    phone: '',
+    status: '',
+    password: '',
+    photo: '',
+    position: '',
+    location: '',
+    birthday: '',
+    payment: {
+        bank: '',
+        account: '',
+        type: '',
+    },
+    age: 0,
+    createdAt:  '',
+    updatedAt: ''
 };
 
 export const UserKey = 'user';
@@ -23,6 +39,7 @@ export const userSlice = createSlice({
             return action.payload;
         },
         resetUser: () => {
+            // clearLocalStorage(UserKey);
             // clearLocalStorage(UserKey);
             return EmptyUserState;
         }

@@ -19,7 +19,7 @@ export interface Admin{
     position: string;
     location: string;
     birthday: string;
-    pyment: Payment;
+    payment: Payment;
     age: number;
     createdAt:  string;
     updatedAt: string;

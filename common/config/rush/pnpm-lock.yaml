@@ -2434,9 +2434,15 @@ packages:
     dev: false
 
   file:projects/business-logic.tgz:
-    resolution: {integrity: sha512-Ix2rAYbswYT2MHUAg0icci7YbsUI/bo/LG4pKrGRxty5UA6s9iZ9Zr+rgdP2Kku0XfvGC13gYjfbSM/FO6gWaQ==, tarball: file:projects/business-logic.tgz}
+    resolution: {integrity: sha512-HNP/aMrj9oX3T+Km2+U4nQnEc6iM406K1S3C5z4VUP4vrDwyB7SUXxmvAdfz/RiTJLjGN0ruMAJBirLC8Mhk/Q==, tarball: file:projects/business-logic.tgz}
     name: '@rush-temp/business-logic'
     version: 0.0.0
+    dependencies:
+      '@types/node': 18.8.2
+      '@types/uuid': 8.3.4
+      tslib: 2.4.0
+      typescript: 4.8.4
+      uuid: 9.0.0
     dev: false
 
   file:projects/constant-definitions.tgz:
@@ -2492,7 +2498,7 @@ packages:
     dev: false
 
   file:projects/real-vision-api.tgz:
-    resolution: {integrity: sha512-F7Q+H3g9amNbfK8q240w0LLi2NNlN1axIIG+N66H1Di3G9OlbSl/1iJ1dO4q14xvtoVOd4sECio32sm6/f9nMQ==, tarball: file:projects/real-vision-api.tgz}
+    resolution: {integrity: sha512-75Rdm6FCTUKHLzuBQf/tmIeQdh3j/NqkektcqiCkFUZi5uns7LjU5EX/UI/lJMI48GmSLbtLVgAacW/6MztilQ==, tarball: file:projects/real-vision-api.tgz}
     name: '@rush-temp/real-vision-api'
     version: 0.0.0
     dependencies:

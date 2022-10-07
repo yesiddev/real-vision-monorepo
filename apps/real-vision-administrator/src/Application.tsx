@@ -10,6 +10,8 @@ import CreatePostSoftware from './screens/Software/Blog/CreatePostSoftware'
 import { PublicRoutes } from './constants-definitions/Routes'
 import Private from './screens/Private'
 import Loader from './components/Layout/Loader'
+import GuardRoute from './guards/GuardRoute'
+import Signin from './screens/Signin'
 
 const Application = () => {
   const [count, setCount] = useState(0)
@@ -23,9 +25,12 @@ const Application = () => {
   return (
     <BrowserRouter>
     <Routes>
-      <Route  path={PublicRoutes.LOGIN} element={<Boards />} />
-      <Route  path='/create-post-software' element={<CreatePostSoftware />} />
-      <Route path='/*' element={<Private />} />
+      <Route  path={PublicRoutes.LOGIN} element={<Signin />} />
+      {/* <Route  path='/create-post-software' element={<CreatePostSoftware />} /> */}
+      <Route element={<GuardRoute  privateValidation={true} />}>
+        <Route path='/*' element={<Private />} />
+      </Route>
+
       </Routes>
 
       

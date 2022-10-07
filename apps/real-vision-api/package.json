@@ -13,7 +13,9 @@
   "dependencies": {
     "@fastify/cors": "^8.1.0",
     "fastify": "^4.7.0",
-    "@rv/types": "1.0.0"
+    "@rv/types": "1.0.0",
+    "@rv/business-logic": "1.0.0",
+    "@rv/constant-definitions": "1.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.8.2",

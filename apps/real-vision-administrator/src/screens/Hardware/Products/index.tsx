@@ -5,6 +5,7 @@ import Field from '@/components/shared/Field';
 import HeaderScreen from '@/components/shared/Header';
 import Input from '@/components/shared/Input';
 import { getProducts } from '@/redux/states';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Products.module.css'
@@ -20,7 +21,23 @@ const Products = () => {
         dispatch(getProducts() as any);
     }, [])
 
-    console.log(loading);
+    const [parts, setParts] = useState([]);
+
+    const options = {
+      method: 'GET',
+      url: 'https://top-computer-parts.p.rapidapi.com/top/5/gpu',
+      headers: {
+        'X-RapidAPI-Key': 'a22ab57f00msheb5471d6cd02770p12b87bjsn2c6d47ef0a68',
+        'X-RapidAPI-Host': 'top-computer-parts.p.rapidapi.com'
+      }
+    };
+
+    // const fetchParts = async() => {
+    //   const {data} = await axios.get(options)
+    // }
+
+    
+
     if(loading) return <Loader /> 
 
   return (
@@ -54,7 +71,19 @@ const Products = () => {
             </tr>
         </thead>
         <tbody>
-            {products?.filter((product: any) => product.name.toLowerCase().includes(search.toLowerCase())).map((product:any) => (
+            {/* {products?.filter((product: any) => product.name.toLowerCase().includes(search.toLowerCase())).map((product:any) => (
+                <tr key={product.uuid}>
+                <td>{product.name}</td>
+                <td>{product.brand}</td>
+                <td>{product.category}</td>
+                <td>${product.price}</td>
+                <td>{product.wattage}W</td>
+                <td>{product?.createdAt?.substring(0,10)}</td>
+                <td>{product?.status?.toString()}</td>
+                <td><button><i className='bx bx-dots-vertical-rounded'></i></button></td>
+            </tr>
+            ))} */}
+               {products?.filter((product: any) => product.name.toLowerCase().includes(search.toLowerCase())).map((product:any) => (
                 <tr key={product.uuid}>
                 <td>{product.name}</td>
                 <td>{product.brand}</td>
