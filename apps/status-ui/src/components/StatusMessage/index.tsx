@@ -17,7 +17,7 @@ const StatusMessage = ({services}: Props) => {
   if (errors.length === 0) {
     return (
       <div className='StatusMessage StatusMessage--OK'>
-        <p className='StatusMessage__text'>All OK</p>
+        <p className='StatusMessage__text'>All Services OK</p>
       </div>
     )
   } else {

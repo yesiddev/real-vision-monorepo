@@ -3,6 +3,9 @@
   padding: 1rem 1.4rem;
   border-radius: 0.5rem;
   margin: 2rem 0;
+  margin: 2rem auto;
+  min-width: 20rem;
+  text-align: center;
 }
 .StatusMessage--OK {
   background-color: #45CB85;
@@ -13,4 +16,5 @@
 .StatusMessage__text {
   font-size: 1.6rem;
   letter-spacing: 0.4px;
+  color: #fff;
 }

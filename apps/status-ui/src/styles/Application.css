@@ -11,5 +11,7 @@ margin: 0 auto;
 }
 .title {
 height: min-content;
-color: var(--primary-color);
+color: #333;
+text-align: center;
+font-weight: 600;
 }

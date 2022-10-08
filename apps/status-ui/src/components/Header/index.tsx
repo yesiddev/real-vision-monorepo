@@ -9,7 +9,7 @@ const Header = () => {
           <img src="/logo.webp" alt="company logo" className='Header__image' />
         </figure>
         <p className='Header__title'>
-          Real Vision Software
+          Real Vision Enterprise
         </p>
       </div>
     </header>
