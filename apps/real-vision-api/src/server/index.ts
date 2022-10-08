@@ -31,7 +31,7 @@ export const initDataSources = async ( {mongoose}: InitDataSourcesOptions) => {
     })
 
     server.register(fastifyCors, {
-        origin: "http:localhost:5173"
+        origin: true
     });
 
     server.register((instance, options, next) => {

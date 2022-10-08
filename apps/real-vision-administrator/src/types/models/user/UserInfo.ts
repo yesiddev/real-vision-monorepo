@@ -4,7 +4,7 @@ type Payment = {
     type: string;
 }
 
-export interface UserInfo {
+export interface UserInfo{
     uuid: string;
     name: string;
     middlename: string;
@@ -24,4 +24,11 @@ export interface UserInfo {
     age: number;
     createdAt:  string;
     updatedAt: string;
+}
+
+export interface User {
+    user: UserInfo;
+    loading: boolean;
+    success: boolean;
+    error: string;
 }

@@ -5,7 +5,7 @@ const types_1 = require("@rv/types");
 const dist_1 = require("@rv/constant-definitions/dist");
 const uuid_1 = require("uuid");
 const createIssue = async (data) => {
-    const model = await (0, dist_1.getModel)(dist_1.Collection.ISSUE, types_1.IssueSchemaMongo);
+    const model = await (0, dist_1.getModel)(dist_1.Collection.ISSUES, types_1.IssueSchemaMongo);
     const uuid = (0, uuid_1.v4)();
     const issue = new model({ ...data, uuid });
     if (!issue) {

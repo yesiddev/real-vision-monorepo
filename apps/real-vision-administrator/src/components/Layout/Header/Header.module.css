@@ -33,6 +33,8 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+    cursor: pointer;
+    position: relative;
 }
 
 .user h3{
@@ -74,7 +76,7 @@
     transition: .5s;
 }
 
-.nav span:hover .dropdown_menu {
+.nav span:hover .dropdown_menu_user {
     display: flex;
     flex-direction: column;
     padding: .5rem;
@@ -87,7 +89,34 @@
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: .5s;
+    background-color: #1971ea;
+}
 
+.dropdown_menu_user{
+    display: none;
+    z-index: 1;
+}
+
+.user:hover .dropdown_menu_user {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 160px;
+    background-color: #fff;
+    color: var(--legacy-blue);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+
+
+.user .dropdown_menu_user button{
+    padding: .8rem;
+    border-radius: .5rem;
+    background: #fff;
 }
 
 .nav span .dropdown_menu a{
@@ -96,5 +125,9 @@
 }
 
 .nav span .dropdown_menu a:hover{
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.user .dropdown_menu_user button:hover{
     background-color: rgba(0, 0, 0, .05);
 }

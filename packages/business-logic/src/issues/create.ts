@@ -3,7 +3,7 @@ import {Collection, getModel} from '@rv/constant-definitions/dist'
 import {v4 as UUID} from 'uuid';
 
 export const createIssue = async (data: Issue): Promise<Issue | Error> => {
-    const model = await getModel(Collection.ISSUE, IssueSchemaMongo);  
+    const model = await getModel(Collection.ISSUES, IssueSchemaMongo);  
     const uuid = UUID();
     const issue = new model({...data, uuid});
 

@@ -5,3 +5,4 @@ const list_1 = require("./list");
 exports.issuesRoutes = [
     list_1.getIssuesRoute,
 ];
+//# sourceMappingURL=index.js.map

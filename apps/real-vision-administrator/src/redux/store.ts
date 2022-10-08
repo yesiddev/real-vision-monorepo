@@ -1,8 +1,8 @@
-import { UserInfo } from "@/types/models/user/UserInfo";
+import { User, UserInfo } from "@/types/models/user/UserInfo";
 import { configureStore } from "@reduxjs/toolkit";
 import { Product } from "@rv/types";
-import { productsSlice, softwarePostSlice } from "./states";
-import userSliceReducer  from "./states/user";
+import { productsSlice, softwarePostSlice, user } from "./states";
+import userSliceReducer  from "./states/admins/user";
 
 interface ProductSlice {
     products: Product[];
@@ -10,7 +10,7 @@ interface ProductSlice {
 }
 
 export interface AppStore {
-    user: UserInfo;
+    user: User;
     products: ProductSlice;
     softwarePosts: any;
 }

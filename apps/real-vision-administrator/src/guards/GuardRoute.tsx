@@ -13,7 +13,9 @@ const PublicValidationFragment = <Navigate replace to={PrivateRoutes.PRIVATE} />
 
 const GuardRoute = ({privateValidation}: Props) => {
   const userState = useSelector((store: AppStore) => store.user);
-  return userState.name ? (
+
+  console.log(userState.user);
+  return userState.user.name ? (
     privateValidation ? (
       PrivateValidationFragment
     ) : (

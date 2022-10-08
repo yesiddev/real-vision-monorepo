@@ -1,7 +1,10 @@
+import Loader from "@/components/Layout/Loader";
 import Button from "@/components/shared/Button";
 import Field from "@/components/shared/Field";
 import Input from "@/components/shared/Input";
-import React, { useState } from "react";
+import { login } from "@/redux/states/admins/user";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styles from "./Signin.module.css";
 
@@ -11,7 +14,7 @@ const Signin = () => {
     password: "",
   });
 
-  const [error, setError] = useState({})
+  const {loading, user, success, error} = useSelector((state: any) => state.user)
 
   const navigate = useNavigate();
 
@@ -19,20 +22,28 @@ const Signin = () => {
     setAdmin((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const dispatch = useDispatch();
+
   const onSubmit = async(e: any) => {
     e.preventDefault();
     try{
-        if(admin.username == 'nestor'){
-            
-            navigate('/', {replace: true});
-        }
-
+      dispatch(login({username: admin.username, password: admin.password}) as any);
     }catch(err){
       if(err instanceof Error){
-          setError(err.message)
+        console.log(error)
       }
     }
   }
+
+  console.log(error)
+
+  useEffect(() => {
+   if(success) {
+     navigate('/kanban', {replace: true});
+   }
+  }, [user, error, success, navigate, dispatch])
+
+  if(loading) return <Loader />
 
   return (
     <div className={styles.signin_container}>
@@ -43,10 +54,10 @@ const Signin = () => {
         />
         <p>Be the best version of yourself</p>
         <h3>Sign in to your account and change the world</h3>
-        <Field label="Username">
+        <Field label="Username" error={error != "Invalid password"? error : ''}>
           <Input name="username" onChange={handleChange}></Input>
         </Field>
-        <Field label="Password">
+        <Field label="Password" error={error == "Invalid password"? error : ''}>
           <Input
             name="password"
             type="password"

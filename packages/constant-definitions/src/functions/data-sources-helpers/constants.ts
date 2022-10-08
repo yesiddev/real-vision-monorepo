@@ -1,3 +1,4 @@
 export enum Collection{
-    ISSUE ='issue'
+    ISSUES ='issues',
+    ADMINS = 'admins',
 }

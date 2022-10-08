@@ -1,0 +1,37 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.initDataSources = void 0;
+const tslib_1 = require("tslib");
+const cors_1 = tslib_1.__importDefault(require("@fastify/cors"));
+const fastify_1 = tslib_1.__importDefault(require("fastify"));
+const routes_1 = require("../routes");
+const dist_1 = require("@rv/constant-definitions/dist");
+const dotenv = tslib_1.__importStar(require("dotenv"));
+dotenv.config();
+const initDataSources = async ({ mongoose }) => {
+    if (mongoose) {
+        await (0, dist_1.initMongoose)(mongoose);
+    }
+};
+exports.initDataSources = initDataSources;
+(async () => {
+    const server = (0, fastify_1.default)({ logger: true });
+    (0, exports.initDataSources)({
+        mongoose: {
+            mongoUrl: process.env.MONGODB_URL
+        }
+    });
+    server.register(cors_1.default, {
+        origin: "http:localhost:5173"
+    });
+    server.register((instance, options, next) => {
+        (0, routes_1.registerRoutes)(instance);
+        next();
+    }, { prefix: 'api/v3' });
+    const serverAddress = await server.listen({ port: 5000, host: '0.0.0.0' }, () => {
+        server.log.info(`Backend App is running at http://localhost:${5000}`);
+        server.log.info('Press CTRL-c to stop');
+    });
+    server.log.info(`server succesfully started on: ${serverAddress}`);
+})();
+//# sourceMappingURL=index.js.map

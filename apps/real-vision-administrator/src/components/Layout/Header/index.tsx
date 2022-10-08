@@ -1,19 +1,22 @@
+import { logout, reset } from '@/redux/states/admins/user'
 import { Admin } from '@rv/types'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './Header.module.css'
 
 const Header = () => {
-  
-  
-    // const admin: Admin = {
-    //     name: 'Nestor',
-    //     middlename: "Estiwar",
-    //     lastname: "Mosquera",
-    //     middlelastname: "Mosquera",
-    //     position: 'CEO',
-    //     age: 25
-    // }
+
+    const {user} = useSelector((state: any) => state.user)
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const Logout = () => {
+      dispatch(logout() as any)
+      dispatch(reset())
+      navigate('/')
+    }
 
     return (
     <header className={styles.header}>
@@ -59,17 +62,19 @@ const Header = () => {
       </div>
 
       <div className={styles.user}>
+
         <div className={styles.user_profile}>
-          <span>N</span>
-        {/* <span>{admin.name.charAt(0)}</span> */}
+          <span>{user.name.charAt(0)}</span>
         </div>
         <div>
-          <h3>Nestor Mosquera</h3>
-          <p>CEO</p>
-          {/* <h3>{admin.name}</h3> */}
-          {/* <p>{admin.position}</p> */}
+          <h3>{user.name} {user.lastname}</h3>
+          <p>{user.position}</p>
         </div>
+        <div className={styles.dropdown_menu_user}>
+            <button onClick={Logout}>Logout</button>
+          </div>
       </div>
+
     </header>
   )
 }

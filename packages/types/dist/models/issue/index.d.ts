@@ -1,2 +1,2 @@
-export * from './IssueSchemaMongo';
+export * from './issue-mongo';
 export * from './issue';

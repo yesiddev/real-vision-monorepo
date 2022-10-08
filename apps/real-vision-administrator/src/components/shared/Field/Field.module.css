@@ -16,3 +16,10 @@
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+.error{
+    padding-top: .6rem;
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 500;
+}

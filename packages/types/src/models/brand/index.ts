@@ -1,2 +1,2 @@
-export * from './BrandSchemaMongo';
+export * from './brand-mongo';
 export * from './brand';

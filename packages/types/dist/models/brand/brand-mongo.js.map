@@ -1,0 +1,1 @@
+{"version":3,"file":"brand-mongo.js","sourceRoot":"","sources":["../../../src/models/brand/brand-mongo.ts"],"names":[],"mappings":";;;AAAA,uCAAkC;AAIrB,QAAA,gBAAgB,GAAG,IAAI,iBAAM,CAAQ;IAC9C,IAAI,EAAE,EAAC,IAAI,EAAE,MAAM,EAAE,QAAQ,EAAE,IAAI,EAAC;IACpC,IAAI,EAAE,EAAC,IAAI,EAAE,MAAM,EAAE,QAAQ,EAAE,IAAI,EAAC;CACvC,EAAE;IACC,UAAU,EAAE,KAAK;IACjB,UAAU,EAAE,IAAI;CACnB,CAAC,CAAA"}

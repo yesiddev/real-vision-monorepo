@@ -5,6 +5,7 @@ type Payment = {
 }
 
 export interface Admin{
+    uuid: string;
     name: string;
     middlename: string;
     lastname: string;

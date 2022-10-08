@@ -3,9 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   '@fastify/cors': ^8.1.0
   '@types/node': ^18.8.2
+  '@types/uuid': ^8.3.4
   dotenv: ^16.0.3
   fastify: ^4.7.0
   ts-node-dev: ^2.0.0
+  tslib: ^2.4.0
   typescript: ^4.8.4
 
 dependencies:
@@ -14,8 +16,10 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.8.2
+  '@types/uuid': 8.3.4
   dotenv: 16.0.3
   ts-node-dev: 2.0.0_p2zphemn5bk5inasc666rmprwi
+  tslib: 2.4.0
   typescript: 4.8.4
 
 packages:
@@ -98,6 +102,10 @@ packages:
 
   /@types/strip-json-comments/0.0.30:
     resolution: {integrity: sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==}
+    dev: true
+
+  /@types/uuid/8.3.4:
+    resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
     dev: true
 
   /abort-controller/3.0.0:
@@ -799,6 +807,10 @@ packages:
       '@types/strip-json-comments': 0.0.30
       strip-bom: 3.0.0
       strip-json-comments: 2.0.1
+    dev: true
+
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
   /typescript/4.8.4:
