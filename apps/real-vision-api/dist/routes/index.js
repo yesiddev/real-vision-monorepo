@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.registerRoutes = void 0;
 const issues_1 = require("./issues");
 const routes = [
-    ...issues_1.issuesRoutes
+    ...issues_1.issuesRoutes,
 ];
 const registerRoutes = (fastify) => {
     fastify.log.warn("Registering routes", routes);
