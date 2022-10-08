@@ -1,7 +1,7 @@
 export const services = [
     {
       "name": "Partiaf API",
-      "url": "http://partiaf-api-recache.herokuapp.com/api/v2/health-check",
+      "url": "https://partiaf-api-recache.herokuapp.com/api/v2/health-check",
       "id": "service-1"
     },
     {
