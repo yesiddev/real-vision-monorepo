@@ -1,0 +1,27 @@
+.ServiceItem {
+  width: 100%;
+  max-width: 39rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-second);
+}
+.status {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.status__icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  background-size: cover;
+}
+.status__icon--OK {
+  background-image: url('/CheckCircle.png');
+}
+.status__icon--ERROR {
+  background-image: url('/XCircle.png');
+}

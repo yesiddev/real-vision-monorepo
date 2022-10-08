@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import {persistLocalStorage} from '@rv/utilities'
+import Main from './screens/Main'
+import './styles/Application.css'
+
 const Application = () => {
-  const [count, setCount] = useState(0)
-  
   return (
-    <div className="App">
-      <h1>STATUS UI</h1>     
-    </div>
+    <Main />
   )
 }
 

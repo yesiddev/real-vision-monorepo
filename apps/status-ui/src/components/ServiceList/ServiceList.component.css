@@ -1,0 +1,9 @@
+.ServiceList {
+  width: 100%;
+  margin: 3rem 0;
+  display: grid;
+  grid-auto-rows: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 395px));
+  place-content: center;
+  gap: 1rem;
+}

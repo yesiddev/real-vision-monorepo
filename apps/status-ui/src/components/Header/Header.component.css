@@ -1,0 +1,24 @@
+.Header {
+  height: 5.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  background-color: var(--bg-second);
+  box-shadow: 0 0px 8px rgba(0, 0, 0, .05);
+}
+.Header__content-container {
+  width: fit-content;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+.Header__img-container {
+  width: 3rem;
+  height: 3rem;
+}
+.Header__image {
+  object-fit: cover;
+}
+.Header__title {
+  font-size: 1.8rem;
+}
