@@ -1,0 +1,1 @@
+web: NODE_ENV=production node apps/real-vision-api/dist/server/index.js
