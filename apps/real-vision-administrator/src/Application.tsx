@@ -29,7 +29,7 @@ const Application = () => {
       {/* <Route  path='/create-post-software' element={<CreatePostSoftware />} /> */}
       <Route element={<GuardRoute  privateValidation={true} />}>
         <Route path='/*' element={<Private />} />
-      </Route>
+      </Route> 
 
       </Routes>
 

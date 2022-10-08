@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { Service } from '../models/service'
-import allServices from '../data/services.json' assert {type: 'json'}
+import {services as allServices} from '../data/services'
 
 const useGetServices = () => {
   const [services, setServices] = useState<Service[]>([]);
@@ -22,13 +22,7 @@ const useGetServices = () => {
       setServices(completedServices)
     }
 
-    async function hola() {
-      const data = await fetch('https://real-vision-api.herokuapp.com');
-      console.log(data);
-    }
-
     getStatus()
-    hola()
   }, [])
   return services;
 }
