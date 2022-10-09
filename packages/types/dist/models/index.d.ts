@@ -5,3 +5,4 @@ export * from './client';
 export * from './issue';
 export * from './product';
 export * from './project';
+export * from './software-post';

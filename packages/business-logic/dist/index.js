@@ -3,4 +3,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 tslib_1.__exportStar(require("./admins"), exports);
 tslib_1.__exportStar(require("./issues"), exports);
+tslib_1.__exportStar(require("./software-post"), exports);
 //# sourceMappingURL=index.js.map

@@ -22,7 +22,7 @@ exports.initDataSources = initDataSources;
         }
     });
     server.register(cors_1.default, {
-        origin: "http:localhost:5173"
+        origin: true
     });
     server.register((instance, options, next) => {
         (0, routes_1.registerRoutes)(instance);

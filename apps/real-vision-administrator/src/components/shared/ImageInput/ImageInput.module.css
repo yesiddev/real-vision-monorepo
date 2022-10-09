@@ -13,6 +13,7 @@
 .formbold_file_input input {
     opacity: 0;
     position: absolute;
+    width: 200px;
 }
 
 .formbold_file_input label {

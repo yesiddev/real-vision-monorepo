@@ -76,7 +76,7 @@
     transition: .5s;
 }
 
-.nav span:hover .dropdown_menu_user {
+.nav span:hover .dropdown_menu {
     display: flex;
     flex-direction: column;
     padding: .5rem;
@@ -89,7 +89,6 @@
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: .5s;
-    background-color: #1971ea;
 }
 
 .dropdown_menu_user{

@@ -1,4 +1,24 @@
 export declare enum Collection {
     ISSUES = "issues",
-    ADMINS = "admins"
+    ADMINS = "admins",
+    BRANDS = "brands",
+    COMPUTERS = "computers",
+    CATEGORIES = "categories",
+    CLIENTS = "clients",
+    LEADS = "leads",
+    SOFTWARE_POSTS = "software_posts",
+    HARDWARE_POSTS = "hardware_posts",
+    PRODUCTS = "products",
+    SERVICES = "services",
+    PROJECTS = "projects",
+    EVENTS = "events",
+    GAMES = "games",
+    PROGRAMS = "programs",
+    PAGES = "pages",
+    QUOTES = "quotes",
+    SELLS = "sells",
+    EXPENSES = "expenses",
+    PAYSHEETS = "paysheets",
+    COSTS = "costs",
+    PARTNERS = "partners"
 }

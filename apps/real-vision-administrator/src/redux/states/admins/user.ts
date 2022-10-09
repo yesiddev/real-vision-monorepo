@@ -53,9 +53,6 @@ export const login = createAsyncThunk('/signin', async(user: Props, thunkAPI) =>
     return await signinAdmin(user.username, user.password);
   } catch (err:any) {
       const message = err;
-      // if(err.response){
-      //   console.log(message.response.data.message)
-      // }
       return thunkAPI.rejectWithValue(message.response.data.message)
   }
 })
@@ -63,7 +60,6 @@ export const login = createAsyncThunk('/signin', async(user: Props, thunkAPI) =>
 export const logout = createAsyncThunk('/logout', async () => {
   await logoutAdmin();
 })
-
 
 export const userSlice = createSlice({
   name: "user",
@@ -75,15 +71,6 @@ export const userSlice = createSlice({
       state.error = '',
       state.user = EmptyUserState 
     }
-    // loadingSignin: (state) => {
-    //   state.loading = true;
-    // },
-    // loginUser: (state, action) => {
-    //   state.loading = false;
-    //   localStorage.setItem(UserKey, JSON.stringify(action.payload));
-    //   // persistLocalStorage<UserInfo>(UserKey, action.payload);
-    //   return action.payload;
-    // },
   },
 
   extraReducers: (builder) => {

@@ -1,3 +1,4 @@
+import { PrivateRoutes, PublicRoutes } from '@/constants-definitions/Routes'
 import { logout, reset } from '@/redux/states/admins/user'
 import { Admin } from '@rv/types'
 import React from 'react'
@@ -46,7 +47,7 @@ const Header = () => {
         <span>
         Software
           <div className={styles.dropdown_menu}>
-            <Link to="/create-post-software">Create post</Link>
+            <Link to={PrivateRoutes.CREATESOFTWAREPOSTS}>Create post</Link>
             <Link to="/status">Status</Link>
           </div>
         </span>

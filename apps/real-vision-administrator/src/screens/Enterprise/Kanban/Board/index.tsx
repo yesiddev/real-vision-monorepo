@@ -14,8 +14,6 @@ const Board = () => {
   const  params = useParams();
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(issueId);
-  console.log(params);
   return (
     <>
       <Breadcrumbs items={["Enterprise", "Kanban", "Projects"]} />
@@ -44,8 +42,6 @@ const Board = () => {
               )}
                 />
                 )}
-
-
             <Modal
               className="modal"
               isOpen={isOpen}

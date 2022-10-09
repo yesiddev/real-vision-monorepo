@@ -7,6 +7,7 @@ export const PrivateRoutes = {
     KANBAN:  '/kanban',
     PRODUCTS:  '/products',
     SOFTWAREPOSTS:  '/software-posts',
+    CREATESOFTWAREPOSTS:  '/create-post-software',
     PROFILE: '/profile/:username',
     OTHER_PROFILE: '/user/:username',
 }

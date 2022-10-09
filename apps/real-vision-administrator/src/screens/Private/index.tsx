@@ -4,6 +4,7 @@ import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Kanban from '../Enterprise/Kanban'
 import Products from '../Hardware/Products'
+import CreatePostSoftware from '../Software/Blog/CreatePostSoftware'
 import SoftwarePosts from '../Software/Blog/ListPosts'
 
 const Private = () => {
@@ -13,6 +14,7 @@ const Private = () => {
             <Route path={PrivateRoutes.KANBAN} element={<Kanban />} />
             <Route path={PrivateRoutes.PRODUCTS} element={<Products />} />
             <Route path={PrivateRoutes.SOFTWAREPOSTS} element={<SoftwarePosts />} />
+            <Route path={PrivateRoutes.CREATESOFTWAREPOSTS} element={<CreatePostSoftware />} />
             <Route  path='/kanban/issues/:issueId' element={<Kanban />} />
         </Routes>
     </Layout>

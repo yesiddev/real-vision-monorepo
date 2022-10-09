@@ -1,5 +1,5 @@
 .screen{
-    padding: 2rem 04rem;
+    padding: 2rem 4rem;
 }
 
 .screen-100{
@@ -14,6 +14,15 @@
     min-height: 80vh;
 }
 
+.flex{
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+.flex > div{
+    width: 100%;
+}
 
 .ql-toolbar.ql-snow{
     border-radius: .5rem .5rem 0 0;

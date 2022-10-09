@@ -35,6 +35,7 @@ specifiers:
   react-quill: ^2.0.0
   react-redux: ^8.0.4
   react-router-dom: ^6.4.1
+  slugify: ^1.6.5
   ts-node-dev: ^2.0.0
   tslib: ^2.4.0
   uuid: ^9.0.0
@@ -75,6 +76,7 @@ dependencies:
   react-quill: 2.0.0_react-dom@18.2.0+react@18.2.0
   react-redux: 8.0.4_ed28c0204bb8461c8200289612f9802f
   react-router-dom: 6.4.1_react-dom@18.2.0+react@18.2.0
+  slugify: 1.6.5
   ts-node-dev: 2.0.0
   tslib: 2.4.0
   uuid: 9.0.0
@@ -2385,6 +2387,11 @@ packages:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: false
 
+  /slugify/1.6.5:
+    resolution: {integrity: sha512-8mo9bslnBO3tr5PEVFzMPIWwWnipGS0xVbYf65zxDqfNwmzYn1LpiKNrR6DlClusuvo+hDHd1zKpmfAe83NQSQ==}
+    engines: {node: '>=8.0.0'}
+    dev: false
+
   /smart-buffer/4.2.0:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
@@ -2911,12 +2918,13 @@ packages:
     dev: false
 
   file:projects/types.tgz:
-    resolution: {integrity: sha512-upA2hwQ9lXg5As376C9Yk1eNRbE8++h1Y3pC//qnAQEROYNxCRe4ARt4+8OnU8H4GmiLi1jhdxA9bXiwYYzNAg==, tarball: file:projects/types.tgz}
+    resolution: {integrity: sha512-VYkQD5KpiF2gDAnGAAg7tewh7JwXiljyCM9u7HHwQYg+Z4zbyMVzDNn5tP3xDFfrZoOrwNm+FvVg5M+Z2LbFZg==, tarball: file:projects/types.tgz}
     name: '@rush-temp/types'
     version: 0.0.0
     dependencies:
       '@types/node': 18.8.2
       mongoose: 6.6.5
+      slugify: 1.6.5
       tslib: 2.4.0
       typescript: 4.8.4
     transitivePeerDependencies:
