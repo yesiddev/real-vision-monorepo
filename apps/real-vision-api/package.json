@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev src/server",
     "start": "node dist/server",
-    "build": "tsc"
+    "build": "pnpm changelog && pnpx changeset version && pnpm install --no-frozen-lockfile && tsc"
   },
   "keywords": [],
   "author": "",
