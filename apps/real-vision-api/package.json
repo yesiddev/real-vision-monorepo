@@ -8,7 +8,7 @@
     "changeset": "changeset",
     "dev": "ts-node-dev src/server",
     "start": "node dist/src/server",
-    "build": "tsc",
+    "build": "npx tsc --project tsconfig.build.json",
     "changeset-publish": "changeset publish"
   },
   "engines": {
