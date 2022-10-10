@@ -8,6 +8,10 @@
     "start": "node dist/server",
     "build": "pnpm changelog && pnpx changeset version && pnpm install --no-frozen-lockfile && tsc"
   },
+  "engines": {
+    "node": ">16.0.0",
+    "pnpm": ">=6"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
