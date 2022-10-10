@@ -8,6 +8,7 @@ const routes_1 = require("../routes");
 const dist_1 = require("@rv/constant-definitions/dist");
 const dotenv = tslib_1.__importStar(require("dotenv"));
 dotenv.config();
+const PORT = Number(process.env.PORT) || 5000;
 const initDataSources = async ({ mongoose }) => {
     if (mongoose) {
         await (0, dist_1.initMongoose)(mongoose);
@@ -28,7 +29,7 @@ exports.initDataSources = initDataSources;
         (0, routes_1.registerRoutes)(instance);
         next();
     }, { prefix: 'api/v3' });
-    const serverAddress = await server.listen({ port: 5000, host: '0.0.0.0' }, () => {
+    const serverAddress = await server.listen({ port: PORT, host: '0.0.0.0' }, () => {
         server.log.info(`Backend App is running at http://localhost:${5000}`);
         server.log.info('Press CTRL-c to stop');
     });
