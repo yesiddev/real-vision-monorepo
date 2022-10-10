@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './Select.module.css'
 
 type Option = {
-  title: string,
+  name: string,
   value: string
 }
 
@@ -40,8 +40,8 @@ const SelectSearch = ({options, value, setValue}:Props) => {
       <div className={`${styles.select} ${open && styles.select_active} `} id="" >
         <input type="search" onChange={(e) => setSearch(e.target.value)} name="" id="" placeholder='Search' /> 
         <div>
-        {options?.filter((option) => option.title.toLowerCase().includes(search.toLowerCase())).map(({title, value}: any) => (
-          <input readOnly onClick={() => addItem(title, value)} className={styles.options} value={title} />
+        {options?.filter((option) => option.name.toLowerCase().includes(search.toLowerCase())).map(({name, value}: any) => (
+          <input readOnly onClick={() => addItem(name, value)} className={styles.options} value={name} />
         ))}
         </div>
 

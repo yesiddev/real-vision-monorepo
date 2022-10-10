@@ -1,2 +1,2 @@
-import { RouteOptions } from 'fastify';
+import { RouteOptions } from "fastify";
 export declare const createSoftwarePostRoute: RouteOptions;

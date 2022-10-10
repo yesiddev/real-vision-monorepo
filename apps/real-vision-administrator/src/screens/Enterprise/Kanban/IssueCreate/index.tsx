@@ -4,6 +4,7 @@ import Select from '@/components/shared/Select'
 import SelectSearch from '@/components/shared/SelectSearch'
 import TextEditor from '@/components/shared/TextEditor'
 import { getAdmins } from '@/redux/states/admin'
+import { createIssue } from '@/redux/states/issues'
 import { Admin } from '@rv/types'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
@@ -16,43 +17,43 @@ interface Props {
 
 const IssueTypes =[
     {
-        title: "Bug",
+        name: "Bug",
         value: 'Bug'
     },
     {
-        title: 'Task',
+        name: 'Task',
         value: 'Task'
     },
     {
-        title: 'Story',
+        name: 'Story',
         value: 'Story'
     },
     {
-        title: 'Epic',
+        name: 'Epic',
         value: 'Epic'
     },
     {
-        title: 'Subtask',
+        name: 'Subtask',
         value: 'Subtask'
     },
     {
-        title: 'Change',
+        name: 'Change',
         value: 'Change'
     },
     {
-        title: 'Incident',
+        name: 'Incident',
         value: 'Incident'
     },
     {
-        title: 'New feature',
+        name: 'New feature',
         value: 'New feature'
     },
     {
-        title: 'Problem',
+        name: 'Problem',
         value: 'Problem'
     },
     {
-        title: 'Service request',
+        name: 'Service request',
         value: 'Service request'
     }
 ]
@@ -60,45 +61,45 @@ const IssueTypes =[
 
 const PriorityTypes =[
     {
-        title: "Delayed",
+        name: "Delayed",
         value: 'Delayed'
     },
     {
-        title: 'Moderate',
+        name: 'Moderate',
         value: 'Moderate'
     },
     {
-        title: 'Express',
+        name: 'Express',
         value: 'Express'
     },
     {
-        title: 'Urgent',
+        name: 'Urgent',
         value: 'Urgent'
     },
 ]
 
 const StatusTypes =[
     {
-        title: "Ideas",
+        name: "Ideas",
         value: 'Ideas'
     },
     {
-        title: 'To do',
+        name: 'To do',
         value: 'To do'
     },
     {
-        title: 'In Process',
+        name: 'In Process',
         value: 'In Process'
     },
     {
-        title: 'Sprint',
+        name: 'Sprint',
         value: 'Sprint'
     },
     {
-        title: 'Review',
+        name: 'Review',
         value: 'Review'
     },{
-        title: 'Finished',
+        name: 'Finished',
         value: 'Finished'
     },
 ]
@@ -110,19 +111,30 @@ const IssueCreate = ({setIsOpen}: Props) => {
     const {loading, admins = []} = useSelector((state: any) => state.admins)
     const dispatch = useDispatch();
 
-    const [assignees, setAssignees] = useState([]);
+    const [type, setType] = useState('Bug');
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [reporter, setReporter] = useState('');
+    const [assigness, setAssigness] = useState([]);
+    const [status, setStatus] = useState('Ideas');
+    const [priority, setPriority] = useState('Delayed');
 
     useEffect(() => {
         dispatch(getAdmins() as any);
     }, [])
 
+    const onSubmit = (e:any) => {
+        e.preventDefault();
+        dispatch(createIssue({type: JSON.parse(type)?.value, title, description, reporter: JSON.parse(reporter), assigness ,status: JSON.parse(status)?.value, priority: JSON.parse(priority).value}) as any)
+    }
+
     if(!loading) {
         adminsOptions = admins.map((admin:any) => {
-            return {title: admin.name + " " + admin.lastname, value: admin._id}
+            return {name: admin.name + " " + admin.lastname, value: admin._id}
         })
     }
 
-    console.log(assignees)
+    console.log(priority)
 
 
   return (
@@ -132,34 +144,35 @@ const IssueCreate = ({setIsOpen}: Props) => {
     </h2>
 
     <Field label='Issue Type' tip='Start typing to get a list of possible matches.'>
-        <Select options={IssueTypes} />
+        <Select options={IssueTypes} onChange={setType} />
     </Field>
     <Field label='Short Summary' tip='Concisely summarize the issue in one or two sentences.'>
-        <Input />
+        <Input onChange={(e) => setTitle(e.target.value)} />
     </Field>
     <Field label='Description' tip="Describe the issue in as much detail as you'd like.">
-        <TextEditor />
-    </Field>
-    <Field label='Reporter'>
-        <Select options={adminsOptions} />
+        <TextEditor value={description} setValue={setDescription} />
     </Field>
 
+
+    <Field label='Reporter'>
+        <Select options={adminsOptions} onChange={setReporter} />
+    </Field>
     <Field label='Assignees'>
-        <SelectSearch value={assignees} setValue={setAssignees} options={adminsOptions} />
+        <SelectSearch value={assigness} setValue={setAssigness} options={adminsOptions} />
     </Field>
 
     <div className="flex">
         
     <Field label='Status'>
-        <Select options={StatusTypes} />
+        <Select options={StatusTypes} onChange={setStatus}  />
     </Field>
     <Field label='Priority' tip='Priority in relation to other issues.'>
-        <Select options={PriorityTypes} />
+        <Select options={PriorityTypes} onChange={setPriority} />
     </Field>
     </div>
 
     <div className={styles.actions}>
-        <button className='primary' >Create Issue</button>
+        <button className='primary' onClick={onSubmit} >Create Issue</button>
         <button className='second' onClick={() => setIsOpen(false)} >Cancel</button>
     </div>
     </div>

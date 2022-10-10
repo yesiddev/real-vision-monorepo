@@ -4,15 +4,29 @@ exports.IssueSchemaMongo = void 0;
 const mongoose_1 = require("mongoose");
 exports.IssueSchemaMongo = new mongoose_1.Schema({
     uuid: { type: String, required: true },
-    type: { type: String, required: true },
-    code: { type: Number, required: true },
-    title: { type: String, required: true },
-    description: { type: "string", required: true },
-    status: { type: "string", required: true },
-    assigness: [{ type: String, required: true }],
-    reporter: { type: String, required: true },
-    estimate: { type: Number, required: true },
-    project: { type: String, required: true },
+    type: { type: String },
+    code: { type: Number },
+    title: { type: String },
+    description: { type: String },
+    status: { type: String },
+    priority: { type: String },
+    assigness: [
+        {
+            name: { type: String },
+            photo: { type: String },
+            item: { type: String },
+        }
+    ],
+    reporter: {
+        name: { type: String },
+        photo: { type: String },
+        item: { type: String },
+    },
+    estimate: {
+        time_spent: { type: Number },
+        time_remaining: { type: Number },
+    },
+    project: { type: String },
 }, {
     versionKey: false,
     timestamps: true

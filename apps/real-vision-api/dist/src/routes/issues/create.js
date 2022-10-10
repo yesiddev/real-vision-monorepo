@@ -1,24 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createSoftwarePostRoute = void 0;
+exports.createIssueRoute = void 0;
 const dist_1 = require("@rv/business-logic/dist");
-exports.createSoftwarePostRoute = {
+exports.createIssueRoute = {
     method: "POST",
-    url: "/software-post",
+    url: "/issues",
     handler: async (request, reply) => {
         const { body } = request;
-        const { title, category, image, description, content, user_photo, user_name, } = body;
+        const { type, title, description, status, assigness, reporter, estimate, priority } = body;
         try {
-            const admin = await (0, dist_1.createSoftwarePost)({
+            const issue = await (0, dist_1.createIssue)({
+                type,
                 title,
-                category,
-                image,
                 description,
-                content,
-                user_photo,
-                user_name,
+                status,
+                assigness,
+                reporter,
+                priority,
+                estimate,
             });
-            reply.status(200).send(admin);
+            reply.status(200).send(issue);
         }
         catch (err) {
             if (err instanceof Error) {

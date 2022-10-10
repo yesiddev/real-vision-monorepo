@@ -7,7 +7,9 @@ const uuid_1 = require("uuid");
 const createIssue = async (data) => {
     const model = await (0, dist_1.getModel)(dist_1.Collection.ISSUES, types_1.IssueSchemaMongo);
     const uuid = (0, uuid_1.v4)();
-    const issue = new model({ ...data, uuid });
+    const issues = await model.find({});
+    const code = 1000 + Number(issues.length);
+    const issue = new model({ ...data, uuid, code });
     if (!issue) {
         throw new Error('Dont have any issues with this issue');
     }

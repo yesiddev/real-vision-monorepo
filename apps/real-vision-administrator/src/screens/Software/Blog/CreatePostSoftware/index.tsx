@@ -15,27 +15,27 @@ import { useDispatch, useSelector } from "react-redux";
 
 const categories = [
   {
-    title: 'Automatizacion',
+    name: 'Automatizacion',
     value: 'Automatization',
   },
   {
-    title: 'Empresas',
+    name: 'Empresas',
     value: 'Enterprises',
   },
   {
-    title: 'Marketing',
+    name: 'Marketing',
     value: 'Marketing',
   },
   {
-    title: 'UI/UX',
+    name: 'UI/UX',
     value: 'UI/UX',
   },
   {
-    title: 'Desarrollo',
+    name: 'Desarrollo',
     value: 'Development',
   },
   {
-    title: 'Tecnologia',
+    name: 'Tecnologia',
     value: 'Technology',
   },
 ] 

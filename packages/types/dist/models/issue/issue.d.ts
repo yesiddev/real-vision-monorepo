@@ -1,3 +1,8 @@
+declare type User = {
+    name: string;
+    photo: string;
+    item: string;
+};
 export interface Issue {
     uuid: string;
     type: string;
@@ -6,8 +11,9 @@ export interface Issue {
     description: string;
     priority: string;
     status: string;
-    assigness: string[];
-    reporter: string;
+    assigness: User[];
+    reporter: User;
     estimate: number;
     project: string;
 }
+export {};
