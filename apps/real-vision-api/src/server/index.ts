@@ -6,6 +6,7 @@ import {initMongoose} from '@rv/constant-definitions/dist'
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+const PORT = Number(process.env.PORT) || 5000
 export interface InitMongooseOptions {
     mongoUrl: string;
 }
@@ -39,7 +40,7 @@ export const initDataSources = async ( {mongoose}: InitDataSourcesOptions) => {
         next();
     }, {prefix: 'api/v3'});
 
-    const serverAddress = await server.listen({port: 5000, host: '0.0.0.0'}, () => {
+    const serverAddress = await server.listen({port: PORT, host: '0.0.0.0'}, () => {
         server.log.info(`Backend App is running at http://localhost:${5000}`);
         server.log.info('Press CTRL-c to stop');
     });
