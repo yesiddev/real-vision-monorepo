@@ -7,8 +7,8 @@
     "changelog": "echo 'generate master changelog' && conventional-changelog -p real-vision-api -i CHANGELOG.md -s && git add CHANGELOG.md",
     "changeset": "changeset",
     "dev": "ts-node-dev src/server",
-    "start": "node dist/server",
-    "build": "pnpm changelog && pnpx changeset version && pnpm install --no-frozen-lockfile && tsc",
+    "start": "node dist/src/server",
+    "build": "tsc",
     "changeset-publish": "changeset publish"
   },
   "engines": {
